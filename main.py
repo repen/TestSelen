@@ -75,7 +75,7 @@ def main():
     driver.get(URL)
     log_content.info("Waiting 30 sec")
     time.sleep(30)
-    scene(driver)
+    # scene(driver)
     driver.get( URL )
     log_content.debug("Checked length page:  {}".format( len( driver.page_source ) ))
 
