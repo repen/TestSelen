@@ -1,7 +1,7 @@
 import os, time
 from Globals import LOGIN, PASSWORD, SITE
 from itertools import count
-
+import random
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from tools import log
@@ -79,10 +79,21 @@ def main():
     driver.get( URL )
     log_content.debug("Checked length page:  {}".format( len( driver.page_source ) ))
 
-    for _ in count():
+    ran = random.randint(8, 15)
+    for c in count():
+        if c == ran:
+            driver.quit()
+            break
         work(driver, URL)
-        time.sleep(60)
+        time.sleep(30)
+
+def test():
+    for x in range(25):
+        log_content.info("Test X: %d", x)
+        main()
+        time.sleep(10)
 
 if __name__ == '__main__':
-    main()
+    # main()
+    test()
 
