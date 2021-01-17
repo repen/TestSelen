@@ -71,11 +71,13 @@ def main():
 
     log_content.debug("starting chrome")
     log_content.debug("open page {}".format(URL))
-    log_content.debug("starting auth scene")
-    driver.get(URL)
-    log_content.info("Waiting 30 sec")
-    time.sleep(30)
+    
+    # log_content.debug("starting auth scene")
+    # driver.get(URL)
+    # log_content.info("Waiting 30 sec")
+    # time.sleep(30)
     # scene(driver)
+    
     driver.get( URL )
     log_content.debug("Checked length page:  {}".format( len( driver.page_source ) ))
 
